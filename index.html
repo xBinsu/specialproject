@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Couple Moments 💚</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Background decoration -->
+  <div class="bg-leaves">
+    <div class="leaf leaf-1">🌿</div>
+    <div class="leaf leaf-2">🌱</div>
+    <div class="leaf leaf-3">🍃</div>
+    <div class="leaf leaf-4">🌿</div>
+    <div class="leaf leaf-5">🌱</div>
+  </div>
+
+  <!-- ====== NAVBAR ====== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">🌿</span>
+      <span class="brand-text">Couple Moments</span>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" class="nav-link active" data-section="home">
+        <i class="fas fa-home"></i> <span>Home</span>
+      </a></li>
+      <li><a href="#" class="nav-link" data-section="timeline">
+        <i class="fas fa-stream"></i> <span>Timeline</span>
+      </a></li>
+      <li><a href="#" class="nav-link" data-section="dateideas">
+        <i class="fas fa-heart"></i> <span>Date Ideas</span>
+      </a></li>
+      <li><a href="#" class="nav-link" data-section="countdown">
+        <i class="fas fa-clock"></i> <span>Countdown</span>
+      </a></li>
+      <li><a href="#" class="nav-link" data-section="letters">
+        <i class="fas fa-envelope-open-text"></i> <span>Letters</span>
+      </a></li>
+      <li>
+        <button class="dark-toggle" id="darkToggle" title="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- ====== MAIN CONTENT ====== -->
+  <main class="main-content">
+
+    <!-- ===== SECTION 0: HOME ===== -->
+    <section class="section active" id="section-home">
+
+      <!-- Hero -->
+      <div class="home-hero">
+        <div class="home-hero-badge">💚 Your Love Space</div>
+        <h1 class="home-hero-title">Welcome to<br/><em>Couple Moments</em></h1>
+        <p class="home-hero-sub">A cozy little corner to celebrate your love story — every memory, every date, every countdown.</p>
+        <div class="home-hero-btns">
+          <button class="btn btn-primary btn-lg" onclick="switchSection('timeline')">
+            <i class="fas fa-stream"></i> Our Timeline
+          </button>
+          <button class="btn btn-outline btn-lg" onclick="switchSection('dateideas')">
+            <i class="fas fa-heart"></i> Get a Date Idea
+          </button>
+        </div>
+      </div>
+
+      <!-- Memories Carousel -->
+      <div class="home-carousel-wrap" id="homeCarouselWrap">
+        <div class="home-carousel-header">
+          <span class="home-carousel-label"><i class="fas fa-images"></i> Our Memories</span>
+          <div class="home-carousel-controls">
+            <button class="hc-btn" id="hcPrev"><i class="fas fa-chevron-left"></i></button>
+            <span class="hc-dots" id="hcDots"></span>
+            <button class="hc-btn" id="hcNext"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <div class="home-carousel" id="homeCarousel">
+          <div class="hc-empty" id="hcEmpty">No memories yet — add your first! 🌱</div>
+        </div>
+      </div>
+
+      <!-- Feature Cards Row -->
+      <div class="home-features">
+
+        <!-- Date Ideas Preview -->
+        <div class="home-feature-card" onclick="switchSection('dateideas')">
+          <div class="hfc-header">
+            <div class="hfc-icon"><i class="fas fa-heart"></i></div>
+            <div class="hfc-title-wrap">
+              <h2 class="hfc-title">Date Ideas</h2>
+              <p class="hfc-sub">Spark something new between you two.</p>
+            </div>
+            <i class="fas fa-arrow-right hfc-arrow"></i>
+          </div>
+          <div class="hfc-preview" id="homeDateIdeasPreview"><div class="hfc-empty">No activity yet 💚</div></div>
+        </div>
+
+        <!-- Countdown Preview -->
+        <div class="home-feature-card" onclick="switchSection('countdown')">
+          <div class="hfc-header">
+            <div class="hfc-icon"><i class="fas fa-clock"></i></div>
+            <div class="hfc-title-wrap">
+              <h2 class="hfc-title">Countdowns</h2>
+              <p class="hfc-sub">Every second closer to something special.</p>
+            </div>
+            <i class="fas fa-arrow-right hfc-arrow"></i>
+          </div>
+          <div class="hfc-preview" id="homeCountdownPreview">
+            <div class="hfc-empty">No countdowns yet — add one! ⏳</div>
+          </div>
+        </div>
+
+        <!-- Letters Preview -->
+        <div class="home-feature-card" onclick="switchSection('letters')">
+          <div class="hfc-header">
+            <div class="hfc-icon"><i class="fas fa-envelope-open-text"></i></div>
+            <div class="hfc-title-wrap">
+              <h2 class="hfc-title">Love Letters</h2>
+              <p class="hfc-sub">Words that live in the heart forever.</p>
+            </div>
+            <i class="fas fa-arrow-right hfc-arrow"></i>
+          </div>
+          <div class="hfc-preview" id="homeLettersPreview">
+            <div class="hfc-empty">No letters yet — write your first! 💌</div>
+          </div>
+        </div>
+
+      </div>
+
+        <div class="home-spotlight-inner" id="homeSpotlightInner"></div>
+      </div>
+
+    </section>
+
+    <!-- ===== SECTION 1: TIMELINE ===== -->
+    <section class="section hidden" id="section-timeline">
+      <div class="section-header">
+        <h1 class="section-title">Our Story</h1>
+        <p class="section-sub">Every moment with you is a memory worth keeping.</p>
+      </div>
+
+      <!-- Add Memory Form -->
+      <div class="card form-card">
+        <h2 class="card-title"><i class="fas fa-plus-circle"></i> Add a Memory</h2>
+        <form id="memoryForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="memDate">Date <span class="required">*</span></label>
+              <input type="date" id="memDate" class="form-input" required />
+              <span class="error-msg" id="err-date"></span>
+            </div>
+            <div class="form-group">
+              <label for="memTitle">Title <span class="required">*</span></label>
+              <input type="text" id="memTitle" class="form-input" placeholder="e.g. First Date, Monthsary..." required />
+              <span class="error-msg" id="err-title"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="memDesc">Description</label>
+            <textarea id="memDesc" class="form-input" rows="3" placeholder="Tell the story of this moment..."></textarea>
+          </div>
+          <div class="form-group">
+            <label for="memImage">Photo</label>
+            <div class="upload-area" id="uploadArea">
+              <input type="file" id="memImage" accept="image/*" style="display:none" />
+              <div class="upload-placeholder" id="uploadPlaceholder">
+                <i class="fas fa-camera"></i>
+                <span>Click to upload a photo</span>
+              </div>
+              <img id="imagePreview" class="image-preview hidden" alt="Preview" />
+            </div>
+          </div>
+          <input type="hidden" id="memEditId" value="" />
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="memSubmitBtn">
+              <i class="fas fa-heart"></i> Save Memory
+            </button>
+            <button type="button" class="btn btn-ghost" id="memCancelBtn" style="display:none">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Timeline Display -->
+      <div class="timeline-wrapper" id="timelineWrapper">
+        <div class="timeline-empty hidden" id="timelineEmpty">
+          <div class="empty-icon">🌱</div>
+          <p>Your love story starts here. Add your first memory!</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 2: DATE IDEAS ===== -->
+    <section class="section hidden" id="section-dateideas">
+      <div class="section-header">
+        <h1 class="section-title">Date Ideas</h1>
+        <p class="section-sub">Need inspiration? We've got ideas for every kind of day.</p>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="di-tabs">
+        <button class="di-tab active" data-ditab="checklist"><i class="fas fa-check-square"></i> Checklist</button>
+        <button class="di-tab" data-ditab="add"><i class="fas fa-plus-circle"></i> Add Idea</button>
+      </div>
+
+      <!-- ── TAB: CHECKLIST ── -->
+      <div class="di-tab-panel" id="ditab-checklist">
+        <div class="card checklist-card">
+          <div class="checklist-header-row">
+            <h2 class="card-title" style="margin-bottom:0"><i class="fas fa-list-check"></i> Date Bucket List</h2>
+            <div class="checklist-progress-wrap">
+              <span class="checklist-progress-label" id="checklistProgressLabel">0 / 0 done</span>
+              <div class="checklist-progress-bar"><div class="checklist-progress-fill" id="checklistProgressFill"></div></div>
+            </div>
+          </div>
+
+          <!-- Checklist filter -->
+          <div class="checklist-filter" id="checklistFilter">
+            <button class="clf-btn active" data-clf="all">All</button>
+            <button class="clf-btn" data-clf="undone">To-Do</button>
+            <button class="clf-btn" data-clf="done">Done ✅</button>
+          </div>
+
+          <div class="checklist-list" id="checklistList">
+            <div class="checklist-empty hidden" id="checklistEmpty">
+              <div class="empty-icon">📋</div>
+              <p>No ideas match this filter.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── TAB: ADD IDEA ── -->
+      <div class="di-tab-panel" id="ditab-add">
+        <div class="card form-card">
+          <h2 class="card-title"><i class="fas fa-plus-circle"></i> Add a Custom Date Idea</h2>
+          <form id="addIdeaForm" novalidate>
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="ideaAddTitle">Idea Title <span class="required">*</span></label>
+                <input type="text" id="ideaAddTitle" class="form-input" placeholder="e.g. Sunset Rooftop Dinner…" required />
+                <span class="error-msg" id="err-ideaTitle"></span>
+              </div>
+              <div class="form-group">
+                <label for="ideaAddEmoji">Emoji</label>
+                <input type="text" id="ideaAddEmoji" class="form-input" placeholder="🌟" maxlength="4" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="ideaAddDesc">Description</label>
+              <textarea id="ideaAddDesc" class="form-input" rows="3" placeholder="Describe the idea and why you'd love to do it…"></textarea>
+            </div>
+            <div class="form-group">
+              <label>Category</label>
+              <div class="idea-cat-picker" id="ideaCatPicker">
+                <button type="button" class="icp-btn active" data-icat="custom">⭐ Custom</button>
+                <button type="button" class="icp-btn" data-icat="indoor">🏠 Indoor</button>
+                <button type="button" class="icp-btn" data-icat="outdoor">🌳 Outdoor</button>
+                <button type="button" class="icp-btn" data-icat="budget">💰 Budget</button>
+                <button type="button" class="icp-btn" data-icat="adventurous">🏔️ Adventure</button>
+              </div>
+            </div>
+            <input type="hidden" id="ideaAddEditId" value="" />
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary" id="ideaAddSubmitBtn">
+                <i class="fas fa-plus"></i> Add Idea
+              </button>
+              <button type="button" class="btn btn-ghost" id="ideaAddCancelBtn" style="display:none">Cancel</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Custom ideas list -->
+        <div class="card">
+          <div class="favorites-header">
+            <h2 class="card-title" style="margin-bottom:0"><i class="fas fa-star"></i> Your Custom Ideas</h2>
+            <span class="fav-count" id="customIdeaCount">0</span>
+          </div>
+          <div class="favorites-list" id="customIdeasList">
+            <div class="empty-favs" id="emptyCustomIdeas">
+              <p>No custom ideas yet — add one above! 🌟</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ===== SECTION 3: COUNTDOWN ===== -->
+    <section class="section hidden" id="section-countdown">
+      <div class="section-header">
+        <h1 class="section-title">Counting Down</h1>
+        <p class="section-sub">Every second brings us closer to our special moments.</p>
+      </div>
+
+      <!-- Add Countdown Form -->
+      <div class="card form-card">
+        <h2 class="card-title"><i class="fas fa-plus-circle"></i> Add a Countdown</h2>
+        <form id="countdownForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cdName">Event Name <span class="required">*</span></label>
+              <input type="text" id="cdName" class="form-input" placeholder="e.g. Our Anniversary..." required />
+              <span class="error-msg" id="err-cdName"></span>
+            </div>
+            <div class="form-group">
+              <label for="cdDate">Target Date <span class="required">*</span></label>
+              <input type="datetime-local" id="cdDate" class="form-input" required />
+              <span class="error-msg" id="err-cdDate"></span>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cdEmoji">Pick an Emoji</label>
+            <div class="emoji-picker" id="emojiPicker">
+              <button type="button" class="emoji-opt active" data-emoji="💚">💚</button>
+              <button type="button" class="emoji-opt" data-emoji="🎂">🎂</button>
+              <button type="button" class="emoji-opt" data-emoji="💍">💍</button>
+              <button type="button" class="emoji-opt" data-emoji="✈️">✈️</button>
+              <button type="button" class="emoji-opt" data-emoji="🌿">🌿</button>
+              <button type="button" class="emoji-opt" data-emoji="🎉">🎉</button>
+              <button type="button" class="emoji-opt" data-emoji="🌹">🌹</button>
+              <button type="button" class="emoji-opt" data-emoji="⭐">⭐</button>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-clock"></i> Add Countdown
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Countdowns Grid -->
+      <div class="countdowns-grid" id="countdownsGrid">
+        <div class="timeline-empty hidden" id="countdownEmpty">
+          <div class="empty-icon">⏳</div>
+          <p>Add your first countdown to start the clock!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 4: LOVE LETTERS ===== -->
+    <section class="section hidden" id="section-letters">
+      <div class="section-header">
+        <h1 class="section-title">Love Letters</h1>
+        <p class="section-sub">Pour your heart out. Some words deserve more than a text.</p>
+      </div>
+
+      <!-- Compose Form -->
+      <div class="card form-card letter-compose-card">
+        <h2 class="card-title"><i class="fas fa-feather-alt"></i> Write a Letter</h2>
+        <form id="letterForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="ltTitle">Letter Title <span class="required">*</span></label>
+              <input type="text" id="ltTitle" class="form-input" placeholder="e.g. To My Love on a Tuesday…" required />
+              <span class="error-msg" id="err-ltTitle"></span>
+            </div>
+            <div class="form-group">
+              <label for="ltFrom">From</label>
+              <input type="text" id="ltFrom" class="form-input" placeholder="Your name or nickname…" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ltMessage">Your Letter <span class="required">*</span></label>
+            <textarea id="ltMessage" class="form-input letter-textarea" rows="7"
+              placeholder="Dear love,&#10;&#10;Today I want to tell you…"></textarea>
+            <div class="letter-char-count"><span id="ltCharCount">0</span> characters</div>
+            <span class="error-msg" id="err-ltMessage"></span>
+          </div>
+
+          <!-- Mood Tag -->
+          <div class="form-group">
+            <label>Mood</label>
+            <div class="mood-picker" id="moodPicker">
+              <button type="button" class="mood-opt active" data-mood="💚" data-label="Sweet">💚 Sweet</button>
+              <button type="button" class="mood-opt" data-mood="🌹" data-label="Romantic">🌹 Romantic</button>
+              <button type="button" class="mood-opt" data-mood="😊" data-label="Happy">😊 Happy</button>
+              <button type="button" class="mood-opt" data-mood="🥺" data-label="Tender">🥺 Tender</button>
+              <button type="button" class="mood-opt" data-mood="🌙" data-label="Dreamy">🌙 Dreamy</button>
+              <button type="button" class="mood-opt" data-mood="🔥" data-label="Passionate">🔥 Passionate</button>
+            </div>
+          </div>
+
+          <!-- Lock Options -->
+          <div class="lock-options">
+            <div class="lock-toggle-row">
+              <label class="toggle-label">
+                <input type="checkbox" id="ltLockToggle" class="toggle-check" />
+                <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                <span class="toggle-text"><i class="fas fa-lock"></i> Lock with Password</span>
+              </label>
+            </div>
+            <div class="lock-fields hidden" id="lockFields">
+              <div class="form-group" style="margin-top:0.75rem;">
+                <label for="ltPassword">Password</label>
+                <div class="pw-wrap">
+                  <input type="password" id="ltPassword" class="form-input" placeholder="Set a password for this letter…" />
+                  <button type="button" class="pw-eye" id="pwEye1"><i class="fas fa-eye"></i></button>
+                </div>
+                <span class="error-msg" id="err-ltPw"></span>
+              </div>
+            </div>
+
+            <div class="lock-toggle-row" style="margin-top:0.75rem;">
+              <label class="toggle-label">
+                <input type="checkbox" id="ltScheduleToggle" class="toggle-check" />
+                <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                <span class="toggle-text"><i class="fas fa-calendar-alt"></i> Schedule Unlock Date</span>
+              </label>
+            </div>
+            <div class="schedule-fields hidden" id="scheduleFields">
+              <div class="form-group" style="margin-top:0.75rem;">
+                <label for="ltUnlockDate">Opens On</label>
+                <input type="datetime-local" id="ltUnlockDate" class="form-input" />
+                <p class="field-hint">Letter will be sealed until this date & time.</p>
+              </div>
+            </div>
+          </div>
+
+          <input type="hidden" id="ltEditId" value="" />
+          <div class="form-actions" style="margin-top:1.25rem;">
+            <button type="submit" class="btn btn-primary" id="ltSubmitBtn">
+              <i class="fas fa-paper-plane"></i> Send Letter
+            </button>
+            <button type="button" class="btn btn-ghost" id="ltCancelBtn" style="display:none;">Cancel</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Letters Grid -->
+      <div class="letters-section-header">
+        <h2 class="letters-section-title"><i class="fas fa-inbox"></i> Your Letters</h2>
+        <div class="letters-filter">
+          <button class="lf-btn active" data-lfilter="all">All</button>
+          <button class="lf-btn" data-lfilter="unlocked">Open</button>
+          <button class="lf-btn" data-lfilter="locked">Locked</button>
+          <button class="lf-btn" data-lfilter="scheduled">Scheduled</button>
+        </div>
+      </div>
+
+      <div class="letters-grid" id="lettersGrid">
+        <div class="timeline-empty hidden" id="lettersEmpty">
+          <div class="empty-icon">💌</div>
+          <p>No letters yet. Write one from the heart above!</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== LETTER READER MODAL ===== -->
+  <div class="modal-overlay hidden" id="letterReaderOverlay">
+    <div class="letter-reader">
+      <button class="letter-reader-close" id="letterReaderClose"><i class="fas fa-times"></i></button>
+
+      <!-- Envelope animation layer -->
+      <div class="envelope-wrap" id="envelopeWrap">
+        <div class="envelope" id="envelopeAnim">
+          <div class="env-flap"></div>
+          <div class="env-body">
+            <div class="env-seal">💚</div>
+          </div>
+        </div>
+        <p class="env-prompt">Tap to open the letter</p>
+        <button class="btn btn-primary env-open-btn" id="envOpenBtn">
+          <i class="fas fa-envelope-open"></i> Open Letter
+        </button>
+      </div>
+
+      <!-- Actual letter content -->
+      <div class="letter-content hidden" id="letterContent">
+        <div class="letter-paper">
+          <div class="letter-paper-header">
+            <div class="letter-mood" id="readerMood"></div>
+            <div class="letter-meta-wrap">
+              <h2 class="letter-paper-title" id="readerTitle"></h2>
+              <div class="letter-paper-meta">
+                <span id="readerFrom"></span>
+                <span class="meta-sep">·</span>
+                <span id="readerDate"></span>
+              </div>
+            </div>
+          </div>
+          <div class="letter-paper-body" id="readerBody"></div>
+        </div>
+        <div class="letter-reader-actions">
+          <button class="btn btn-outline" id="readerEditBtn"><i class="fas fa-pen"></i> Edit</button>
+          <button class="btn btn-ghost" id="readerCloseBtn2"><i class="fas fa-times"></i> Close</button>
+        </div>
+      </div>
+
+      <!-- Password Gate -->
+      <div class="pw-gate hidden" id="pwGate">
+        <div class="pw-gate-icon">🔒</div>
+        <h3 class="pw-gate-title">This letter is locked</h3>
+        <p class="pw-gate-sub">Enter the password to read it.</p>
+        <div class="pw-wrap" style="max-width:300px;margin:1rem auto;">
+          <input type="password" id="gatePassword" class="form-input" placeholder="Password…" />
+          <button type="button" class="pw-eye" id="pwEye2"><i class="fas fa-eye"></i></button>
+        </div>
+        <span class="error-msg" id="err-gate" style="display:block;text-align:center;margin-bottom:0.75rem;"></span>
+        <button class="btn btn-primary" id="gateUnlockBtn"><i class="fas fa-unlock"></i> Unlock</button>
+      </div>
+
+      <!-- Scheduled Gate -->
+      <div class="pw-gate hidden" id="schedGate">
+        <div class="pw-gate-icon">📅</div>
+        <h3 class="pw-gate-title">Not yet…</h3>
+        <p class="pw-gate-sub" id="schedGateSub">This letter will open on a special day.</p>
+        <div class="sched-countdown" id="schedCountdownDisplay"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>
+    <span id="toastMsg">Saved!</span>
+  </div>
+
+  <!-- Confirm Modal -->
+  <div class="modal-overlay hidden" id="modalOverlay">
+    <div class="modal">
+      <div class="modal-icon">🗑️</div>
+      <h3 class="modal-title">Delete this?</h3>
+      <p class="modal-body" id="modalBody">This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="btn btn-ghost" id="modalCancel">Cancel</button>
+        <button class="btn btn-danger" id="modalConfirm">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
